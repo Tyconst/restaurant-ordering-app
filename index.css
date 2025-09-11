@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: "Smythe", system-ui;
+} 
+
+/* header */
+header{
+    height: 160px;
+    background-image: url(images/diner.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.header-text{
+    margin: 10px auto 70px 50px;
+    text-shadow: 0 0 5px black;
+}
+
+h1 {
+    font-size: 39px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: -20px;
+}
+
+/* menu */
+.menu {
+    max-width: 600px;
+    min-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* item */
+
+.item{
+    height: 140px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 65px 46px 46px 45px;
+    border-bottom: 1px solid #DEDEDE;
+    gap: 30px;
+}
+
+
+.item-emoji {
+    font-family: "Noto Color Emoji", sans-serif;
+    font-size: 70px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.item-name{
+    font-size: 28px;
+    line-height: 0;
+}
+
+.item-ingredients {
+    font-size: 16px;
+    color: #8B8B8B;
+    line-height: 0;
+}
+
+.item-price {
+    font-size: 20px;
+}
+
+.item-add-btn{
+    font-size: 32px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border: 2px solid #DEDEDE;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+/* checkout */
+
+.cart {
+    box-sizing: border-box;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.your-order {
+    text-align: center;
+}
+
+.cart-items {
+    border-bottom: 2px solid #393333;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cart-item-name,
+.your-order,
+.total-price-text{
+    font-size: 28px;
+}
+
+.cart-item-price,
+.total-price {
+    font-size: 20px;
+    margin-left: auto;
+}
+
+.remove-btn {
+    font-size: 12px;
+    color: 8B8B8B;
+    border: none;
+    margin-left: 5px;
+    background-color: white;
+}
+
+.checkout-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
