@@ -1,16 +1,48 @@
 import { menuArray } from '/data.js'
 let cartArray = []
+const modalInner = document.getElementById("modal")
 
 // Add event listener for click of add buttons, need to make sure they are for respective item
 document.addEventListener('click', function(e){
     if(e.target.dataset.add){
         handleAddClick(e.target.dataset.add)
     }
-    else if(e.target.dataset.remove)
+    else if(e.target.dataset.remove){
         handleRemoveClick(e.target.dataset.remove)
-
+    }
+    else if(e.target.id === 'complete-order-btn'){
+        renderCheckout()
+    }
 })
 
+
+// When checkout button is clicked, modal should appear with input form
+function renderCheckout(){
+    modalInner.innerHTML = `
+                    <form>
+                    <div class="modal-header">
+                    <h3>Enter card details</h3>
+                    </div>
+                    <div class="modal-inputs">
+                    <input type="text" 
+                    placeholder="Enter your name" 
+                    required>
+                    <input 
+                    type="text" 
+                    placeholder="Enter card number" 
+                    required>
+                    <input 
+                    type="text" 
+                    placeholder="Enter CVV" 
+                    required>
+                    </div>
+                    <div class="modal-submit">
+                    <button type="submit" id="pay-btn">Pay</button>
+                    </div>
+                </form>
+    `
+    modalInner.style.display = 'flex'
+}
 
 // Iterate over menuArray to use ID saved in itemId to identify the added item's object.
 // Save object in new const, targetMenuObj
@@ -80,15 +112,16 @@ function getCartHtml(){
         `
     })
     return `
-    <div class="cart-items">
-    <p class="your-order"> Your Order</p>
-    ${cartItemsHtml}
-    </div>
-    <div class="checkout-price">
-        <p class="total-price-text">Total Price:</p>
-        <p class="total-price">$${totalPrice}</p>
-    </div>
-    `
+            <div class="cart-items">
+                <p class="your-order"> Your Order</p>
+                ${cartItemsHtml}
+            </div>
+            <div class="checkout-price">
+                <p class="total-price-text">Total Price:</p>
+                <p class="total-price">$${totalPrice}</p>
+            </div>
+            <button class="complete-order-btn" id="complete-order-btn">Complete order</button>
+            `
 }
 
 
@@ -109,7 +142,7 @@ render()
 
 // Each item should have a remove button and checkout button at bottom
 
-// When checkout button is clicked, modal should appear with input form
+
 // Form should have 3 inputs that are compulsory and complete order button
 // Add complete order button to event listener
 // On click, modal should disappear and html containing order should change and display thank you message
