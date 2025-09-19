@@ -145,6 +145,7 @@ h2 {
     width: 100%;
     padding: 20px 180px;
     margin-top: 25px;
+    margin-bottom: 50px;
 }
 
 /* modal */
@@ -198,3 +199,17 @@ form button {
     padding: 20px 180px;
 }
 
+/* thank you message */
+.checkout-message{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #065F46;
+    background-color: #ECFDF5;
+    height: 120px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
